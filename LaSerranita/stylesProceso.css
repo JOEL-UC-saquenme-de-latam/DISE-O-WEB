@@ -1,0 +1,271 @@
+/* ============================================
+   ARCHIVO: stylesProceso.css
+   DESCRIPCIÓN: Estilos de la página de proceso productivo
+   CONTIENEN: Banner, pasos del proceso, certificaciones
+   ============================================ */
+
+/* ========== BANNER DE PÁGINA ========== */
+.page-banner {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo del banner */
+.page-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Superposición oscura del banner */
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Contenido del banner */
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Subtítulo de la página */
+.page-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+}
+
+/* Migas de pan (breadcrumb) */
+.breadcrumb {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* Enlace del breadcrumb */
+.breadcrumb a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Enlace activo del breadcrumb */
+.breadcrumb a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Icono del breadcrumb */
+.breadcrumb span {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.main-content {
+    padding: 80px 0;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Etiqueta de sección */
+.section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(37,211,102,0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Título de sección */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Descripción de sección */
+.section-desc {
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ========== GRID DE PASOS DEL PROCESO ========== */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Cada paso del proceso */
+.process-step {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en el paso */
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Número del paso */
+.step-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(37,211,102,0.1);
+    line-height: 1;
+}
+
+/* Icono del paso */
+.step-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 1.8rem;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en el icono */
+.process-step:hover .step-icon {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Título del paso */
+.process-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+/* Descripción del paso */
+.process-step p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ========== CERTIFICACIONES ========== */
+.section-certifications {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+/* Grid de certificaciones */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta de certificación */
+.certification-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en tarjeta de certificación */
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Icono de la certificación */
+.cert-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Título de la certificación */
+.certification-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+/* Descripción de la certificación */
+.certification-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title { font-size: 2rem; } /* Reduce título en móvil */
+    .section-title { font-size: 1.8rem; } /* Reduce títulos de sección */
+    .process-grid { grid-template-columns: 1fr; } /* 1 columna en móvil */
+    .certifications-grid { grid-template-columns: 1fr; } /* 1 columna en móvil */
+}
+
+@media (max-width: 480px) {
+    .page-title { font-size: 1.8rem; } /* Reduce título en celulares */
+    .process-step { padding: 30px 20px; } /* Reduce padding del paso */
+}

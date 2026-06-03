@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- ============================================
+     ARCHIVO: proceso.html
+     DESCRIPCIÓN: Página del proceso productivo de La Serranita
+     CONTIENE: 9 pasos del proceso de elaboración
+     ============================================ -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso | La Serranita</title>
+    <meta name="description" content="Conoce el proceso artesanal de elaboración de productos lácteos La Serranita.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="stylesProceso.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-spinner"></div>
+            <p>La Serranita</p>
+        </div>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="La Serranita">
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="historia.html" class="nav-link">Historia</a>
+                <a href="productos.html" class="nav-link">Productos</a>
+                <a href="proceso.html" class="nav-link active">Proceso</a>
+                <a href="sucursales.html" class="nav-link">Sucursales</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== BANNER DE PÁGINA ========== -->
+    <section class="page-banner">
+        <div class="page-banner-bg" style="background-image: url('assets/hero2.jpg');"></div>
+        <div class="page-banner-overlay"></div>
+        <div class="page-banner-content">
+            <h1 class="page-title">Nuestro Proceso</h1>
+            <p class="page-subtitle">Del campo a tu mesa con amor y tradición</p>
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <a href="proceso.html" class="active">Proceso</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <main class="main-content">
+
+        <!-- PASOS DEL PROCESO -->
+        <section class="section section-process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Proceso Productivo</span>
+                    <h2 class="section-title">De la leche fresca a tu hogar</h2>
+                    <p class="section-desc">Cada producto pasa por rigurosos controles de calidad en cada etapa de su elaboración.</p>
+                </div>
+                
+                <!-- Grid de pasos del proceso -->
+                <div class="process-grid">
+                    
+                    <!-- Paso 1: Recepción de leche -->
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Recepción de Leche</h3>
+                        <p>La leche fresca llega diariamente de productores locales certificados. Se realizan pruebas de calidad para asegurar su frescura y纯za.</p>
+                    </div>
+                    
+                    <!-- Paso 2: Almacenamiento -->
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h3>Almacenamiento</h3>
+                        <p>La leche se almacena en tanques de refrigeración a 4°C para mantener su frescura y prevenir el crecimiento bacteriano.</p>
+                    </div>
+                    
+                    <!-- Paso 3: Pasteurización -->
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Pasteurización</h3>
+                        <p>Proceso térmico que elimina microorganismos patógenos sin alterar las propiedades nutricionales de la leche.</p>
+                    </div>
+                    
+                    <!-- Paso 4: Separación -->
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Separación</h3>
+                        <p>Se separa la crema de la leche según el porcentaje de grasa requerido para cada producto final.</p>
+                    </div>
+                    
+                    <!-- Paso 5: Homogeneización -->
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <div class="step-icon">
+                            <i class="fas fa-blender"></i>
+                        </div>
+                        <h3>Homogeneización</h3>
+                        <p>Proceso que asegura una textura uniforme y consistente en todos nuestros productos lácteos.</p>
+                    </div>
+                    
+                    <!-- Paso 6: Fermentación -->
+                    <div class="process-step">
+                        <div class="step-number">06</div>
+                        <div class="step-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Fermentación</h3>
+                        <p>Adición de cultivos probióticos para yogures y quesos, desarrollando sabores únicos y beneficios para la salud.</p>
+                    </div>
+                    
+                    <!-- Paso 7: Enfriamiento -->
+                    <div class="process-step">
+                        <div class="step-number">07</div>
+                        <div class="step-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h3>Enfriamiento</h3>
+                        <p>Enfriamiento rápido para detener el proceso de fermentación y preservar las características organolépticas.</p>
+                    </div>
+                    
+                    <!-- Paso 8: Empaque -->
+                    <div class="process-step">
+                        <div class="step-number">08</div>
+                        <div class="step-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3>Empaque</h3>
+                        <p>Envasado en条件iones herméticas que garantizan la frescura y calidad del producto hasta llegar al consumidor.</p>
+                    </div>
+                    
+                    <!-- Paso 9: Distribución -->
+                    <div class="process-step">
+                        <div class="step-number">09</div>
+                        <div class="step-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Distribución</h3>
+                        <p>Cadena de frío controlada que asegura que nuestros productos lleguen frescos y en perfectas condiciones a todas nuestras sucursales.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICACIONES -->
+        <section class="section section-certifications">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Certificaciones</span>
+                    <h2 class="section-title">Calidad respaldada</h2>
+                </div>
+                <div class="certifications-grid">
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>DIGESA</h4>
+                        <p>Registro Sanitario de Productos Alimentarios</p>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>ISO 22000</h4>
+                        <p>Sistema de Gestión de Seguridad Alimentaria</p>
+                    </div>
+                    <div class="certification-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <h4>Laboratorio Propio</h4>
+                        <p>Control de calidad en cada etapa del proceso</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="assets/logo.jpg" alt="La Serranita" class="footer-logo">
+                    <p>Somos una empresa peruana dedicada a la producción y comercialización de productos lácteos y helados artesanales desde 1984 en Huancayo.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/laserranitahyo/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laserranitaperu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51964970065" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/@laserranitaperu" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="nosotros.html"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                        <li><a href="historia.html"><i class="fas fa-chevron-right"></i> Historia</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Yogurt</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Queso Fresco</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Queso Prensado</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Helados</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Leche</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span>Jr. Ayacucho 394<br>Huancayo, Junín, Perú</span></li>
+                        <li><i class="fas fa-phone"></i><span>+51 964 970 065</span></li>
+                        <li><i class="fas fa-clock"></i><span>Lun-Sáb: 7:00 - 20:00<br>Dom: 10:00 - 18:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 La Serranita - Productos Lácteos La Serranita E.I.R.L. | RUC: 20568655355</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BOTONES FLOTANTES ========== -->
+    <a href="https://wa.me/51964970065" class="whatsapp-fab" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="scriptBase.js"></script>
+</body>
+</html>

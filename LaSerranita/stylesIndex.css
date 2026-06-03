@@ -1,0 +1,363 @@
+/* ============================================
+   ARCHIVO: stylesIndex.css
+   DESCRIPCIÓN: Estilos específicos de la página de inicio
+   CONTIENEN: Hero con slider, about, misión/visión, productos preview
+   ============================================ */
+
+/* ========== HERO / BANNER PRINCIPAL ========== */
+.hero {
+    position: relative;          /* Permite posicionar elementos hijos de forma absoluta */
+    height: 100vh;               /* Ocupa toda la altura de la ventana */
+    min-height: 600px;           /* Altura mínima para pantallas pequeñas */
+    display: flex;               /* Flexbox para centrar contenido */
+    align-items: center;         /* Centra verticalmente */
+    justify-content: center;
+    overflow: hidden;            /* Oculta elementos que se desbordan */
+}
+
+/* Contenedor del slider de imágenes */
+.hero-slider {
+    position: absolute;          /* Se posiciona detrás del contenido */
+    inset: 0;                    /* Cubre todo el contenedor padre */
+    z-index: 0;                  /* Envía al fondo */
+}
+
+/* Slide individual del hero */
+.hero-slide {
+    position: absolute;          /* Se apilan uno sobre otro */
+    inset: 0;                    /* Cubre todo el contenedor */
+    background-size: cover;      /* Cubre el área sin deformar */
+    background-position: center; /* Centra la imagen */
+    opacity: 0;                  /* Inicialmente invisible */
+    transition: opacity 1.2s ease; /* Transición suave entre slides */
+}
+
+/* Slide activo (visible) */
+.hero-slide.active {
+    opacity: 1;                  /* Se muestra con transición */
+}
+
+/* Superposición oscura sobre las imágenes */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%); /* Degradado oscuro */
+    z-index: 1;                  /* Encima de las imágenes, debajo del contenido */
+}
+
+/* Contenido principal del hero (título, botones, etc.) */
+.hero-content {
+    position: relative;
+    z-index: 2;                  /* Encima del overlay */
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+/* Etiqueta decorativa sobre el título */
+.hero-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    background: var(--primary);  /* Color primario de base.css */
+    color: white;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeInUp 0.8s ease; /* Animación de entrada */
+}
+
+/* Título principal del hero */
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    font-family: var(--font-heading); /* Fuente elegante */
+    animation: fadeInUp 0.8s ease 0.2s both; /* Animación con delay */
+}
+
+/* Subtítulo */
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-light);
+    margin-bottom: 12px;
+    font-weight: 300;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+/* Descripción del hero */
+.hero-text {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+/* Botones de acción del hero */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;            /* Se apilan en móvil */
+    animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+/* Navegación por puntos del slider */
+.hero-slider-nav {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    z-index: 3;
+    display: flex;
+    gap: 12px;
+}
+
+/* Punto del slider */
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.6); /* Borde semitransparente */
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Punto activo del slider */
+.slider-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: scale(1.2);
+}
+
+/* ========== SECCIÓN NOSOTROS (RESUMEN) ========== */
+.section-about {
+    padding: 100px 0;
+}
+
+/* Grid de dos columnas: imagen + contenido */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Contenedor de la imagen */
+.about-image-wrapper {
+    position: relative;
+}
+
+/* Imagen principal */
+.about-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;          /* Cubre sin deformar */
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Badge de experiencia (años) */
+.about-experience {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: var(--primary);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+}
+
+/* Número de años */
+.exp-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Texto debajo del número */
+.exp-text {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Contenido textual del about */
+.about-content {
+    padding: 20px 0;
+}
+
+/* Párrafo destacado */
+.about-lead {
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* Estadísticas animadas */
+.about-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Cada estadística */
+.stat {
+    text-align: center;
+}
+
+/* Número de la estadística */
+.stat-num {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+}
+
+/* Etiqueta de la estadística */
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+/* ========== MISIÓN Y VISIÓN ========== */
+.section-mv {
+    padding: 80px 0;
+    background: var(--bg-light); /* Fondo gris claro */
+}
+
+/* Grid de dos columnas para tarjetas MV */
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Tarjeta de misión o visión */
+.mv-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en tarjetas MV */
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Icono de la tarjeta MV */
+.mv-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/* Título de la tarjeta MV */
+.mv-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+/* Texto de la tarjeta MV */
+.mv-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* ========== PRODUCTOS PREVIEW ========== */
+.section-products-preview {
+    padding: 100px 0;
+}
+
+/* Grid de 4 columnas para productos preview */
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta de producto preview */
+.preview-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover en tarjetas de producto */
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Imagen del producto preview */
+.preview-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Cubre sin deformar */
+}
+
+/* Título del producto preview */
+.preview-card h4 {
+    padding: 16px;
+    text-align: center;
+    color: var(--text);
+    font-size: 1.05rem;
+}
+
+/* ========== ANIMACIONES ========== */
+/* Animación de entrada desde abajo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE / ADAPTIVO ========== */
+@media (max-width: 1024px) {
+    .hero-title { font-size: 3.5rem; }  /* Reduce título en tablets */
+    .preview-grid { grid-template-columns: repeat(2, 1fr); } /* 2 columnas en tablets */
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }  /* Reduce título en móvil */
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }  /* 1 columna en móvil */
+    .mv-grid { grid-template-columns: 1fr; } /* 1 columna en móvil */
+    .preview-grid { grid-template-columns: 1fr 1fr; gap: 20px; } /* 2 columnas en móvil */
+    .about-experience { position: relative; bottom: auto; right: auto; margin-top: 20px; } /* Badge relativo */
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2rem; }    /* Reduce título en celulares */
+    .preview-grid { grid-template-columns: 1fr; } /* 1 columna en celulares */
+    .hero-buttons { flex-direction: column; align-items: center; } /* Botones apilados */
+}

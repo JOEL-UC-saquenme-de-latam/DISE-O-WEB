@@ -1,0 +1,408 @@
+/* ============================================
+   ARCHIVO: base.css
+   DESCRIPCIÓN: Estilos compartidos para todas las páginas
+   CONTIENE: Variables, reset, header, footer, botones, animaciones
+   ============================================ */
+
+/* ========== VARIABLES CSS ========== */
+/* Definición de colores, fuentes, sombras y transiciones globales */
+:root {
+    --primary: #c41e3a;           /* Color rojo principal de la marca */
+    --primary-dark: #a01830;      /* Rojo oscuro para hover */
+    --primary-light: #e8354f;     /* Rojo claro para efectos */
+    --secondary: #2d5a27;         /* Verde secundario */
+    --secondary-light: #3d7a35;   /* Verde claro */
+    --accent: #f4a460;            /* Dorado para acentos */
+    --dark: #1a1a2e;              /* Color oscuro para footer */
+    --dark-2: #16213e;            /* Segundo tono oscuro */
+    --gray-900: #212529;          /* Texto principal */
+    --gray-700: #495057;          /* Texto secundario */
+    --gray-500: #6c757d;          /* Texto terciario */
+    --gray-400: #adb5bd;          /* Bordes y líneas */
+    --gray-200: #e9ecef;          /* Fondos claros */
+    --gray-100: #f8f9fa;          /* Fondos muy claros */
+    --white: #ffffff;             /* Blanco puro */
+    --font-display: 'Playfair Display', Georgia, serif;  /* Fuente para títulos */
+    --font-body: 'Inter', -apple-system, sans-serif;     /* Fuente para cuerpo */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);     /* Sombra suave */
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.12);    /* Sombra media */
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);   /* Sombra fuerte */
+    --radius-sm: 8px;     /* Bordes redondeados pequeños */
+    --radius-md: 16px;    /* Bordes redondeados medios */
+    --radius-lg: 24px;    /* Bordes redondeados grandes */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);  /* Transición suave */
+}
+
+/* ========== RESET / REINICIO ========== */
+/* Elimina márgenes, paddings y establece box-sizing para todos los elementos */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Comportamiento de scroll suave con offset para el header fijo */
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+/* Estilos base del body: fuente, color, fondo y overflow horizontal oculto */
+body { font-family: var(--font-body); color: var(--gray-900); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+/* Elimina subrayado de enlaces y hereda color */
+a { text-decoration: none; color: inherit; }
+
+/* Elimina puntos de lista */
+ul { list-style: none; }
+
+/* Imágenes responsivas */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Botones sin estilo por defecto */
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* Contenedor centralizado con ancho máximo */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ========== PRELOADER / CARGADOR ========== */
+/* Pantalla de carga que se muestra mientras la página carga */
+.preloader {
+    position: fixed;           /* Se fija en la pantalla */
+    inset: 0;                  /* Ocupa todo el viewport */
+    z-index: 9999;             /* Siempre encima de todo */
+    background: var(--white);  /* Fondo blanco */
+    display: flex;             /* Flexbox para centrar */
+    align-items: center;       /* Centrado vertical */
+    justify-content: center;   /* Centrado horizontal */
+    transition: opacity 0.5s, visibility 0.5s;  /* Transición de desaparición */
+}
+/* Estado oculto del preloader */
+.preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+/* Contenido interno del preloader */
+.preloader-inner { text-align: center; }
+/* Animación de spinner circular */
+.preloader-spinner {
+    width: 50px; height: 50px;
+    margin: 0 auto 16px;       /* Margen inferior */
+    border: 4px solid var(--gray-200);           /* Borde gris claro */
+    border-top-color: var(--primary);            /* Borde superior rojo (animado) */
+    border-radius: 50%;        /* Forma circular */
+    animation: spin 0.8s linear infinite;        /* Rotación continua */
+}
+/* Texto del preloader */
+.preloader-inner p { font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); font-weight: 600; }
+/* Keyframe para la animación de rotación */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ========== HERO DE PÁGINAS INTERNAS ========== */
+/* Banner superior para páginas que no son la principal */
+.page-hero {
+    position: relative;        /* Para posicionar el overlay */
+    height: 50vh;              /* 50% del viewport */
+    min-height: 350px;         /* Altura mínima */
+    display: flex;             /* Flexbox para centrar contenido */
+    align-items: center;       /* Centrado vertical */
+    justify-content: center;   /* Centrado horizontal */
+    overflow: hidden;          /* Oculta elementos que se salgan */
+}
+/* Imagen de fondo del hero */
+.page-hero-bg {
+    position: absolute;        /* Cubre todo el hero */
+    inset: 0;
+    background-size: cover;    /* Cubre el espacio manteniendo proporción */
+    background-position: center; /* Centra la imagen */
+}
+/* Superposición oscura sobre la imagen */
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26,26,46,0.8), rgba(196,30,58,0.6)); /* Degradado oscuro a rojo */
+}
+/* Contenido del hero (título y subtítulo) */
+.page-hero-content {
+    position: relative;        /* Encima del overlay */
+    z-index: 2;
+    text-align: center;        /* Texto centrado */
+    color: white;              /* Texto blanco */
+}
+.page-hero-content h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 12px; }
+.page-hero-content p { font-size: 1.1rem; opacity: 0.8; }
+
+/* ========== HEADER / CABECERA ========== */
+/* Barra de navegación fija en la parte superior */
+.header {
+    position: fixed;           /* Se fija al hacer scroll */
+    top: 0; left: 0; right: 0; /* Ocupa todo el ancho */
+    z-index: 1000;             /* Siempre encima de otros elementos */
+    background: rgba(255,255,255,0.95);  /* Blanco semitransparente */
+    backdrop-filter: blur(20px);          /* Efeito de desenfoque (glassmorphism) */
+    -webkit-backdrop-filter: blur(20px);  /* Compatibilidad Safari */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Borde inferior sutil */
+    transition: var(--transition);        /* Transición suave */
+}
+/* Estado con sombra al hacer scroll */
+.header.scrolled { box-shadow: var(--shadow-sm); }
+/* Contenedor interno del header */
+.header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    display: flex;             /* Flexbox para alinear elementos */
+    align-items: center;       /* Centrado vertical */
+    justify-content: space-between; /* Espacio entre logo y nav */
+    height: 80px;              /* Altura fija del header */
+}
+
+/* ========== LOGO ========== */
+.logo { display: flex; align-items: center; }
+/* Logo circular para ocultar fondo blanco de la imagen */
+.logo img { height: 65px; width: 65px; border-radius: 50%; object-fit: cover; }
+
+/* ========== NAVEGACIÓN ========== */
+/* Menú de navegación horizontal */
+.nav { display: flex; gap: 8px; }
+/* Enlace de navegación individual */
+.nav-link {
+    padding: 8px 16px;        /* Espaciado interno */
+    border-radius: 50px;      /* Forma de pastilla */
+    font-size: 0.9rem;        /* Tamaño de fuente */
+    font-weight: 500;         /* Grosor medio */
+    color: var(--gray-700);   /* Color de texto */
+    transition: var(--transition); /* Transición suave */
+}
+/* Estado hover y activo del enlace */
+.nav-link:hover, .nav-link.active { color: var(--primary); background: rgba(196,30,58,0.08); }
+
+/* ========== BOTÓN HAMBURGUESA (MÓVIL) ========== */
+/* Botón para abrir/cerrar menú en dispositivos móviles */
+.nav-toggle {
+    display: none;             /* Oculto en escritorio */
+    width: 40px; height: 40px;
+    flex-direction: column;    /* Líneas apiladas verticalmente */
+    align-items: center;
+    justify-content: center;
+    gap: 5px;                 /* Espacio entre líneas */
+}
+/* Líneas del botón hamburguesa */
+.nav-toggle span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--gray-900);  /* Color de las líneas */
+    transition: var(--transition); /* Transición para animación */
+    border-radius: 2px;
+}
+/* Animación de cruz cuando está abierto */
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; } /* Línea central desaparece */
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ========== BOTONES ========== */
+/* Botón base genérico */
+.btn {
+    display: inline-flex;      /* Se ajusta al contenido */
+    align-items: center; justify-content: center;
+    gap: 8px;                 /* Espacio entre icono y texto */
+    padding: 14px 32px;       /* Espaciado interno */
+    border-radius: 50px;      /* Forma de pastilla */
+    font-weight: 600;         /* Texto en negrita */
+    font-size: 0.95rem;       /* Tamaño de fuente */
+    transition: var(--transition); /* Transición suave */
+}
+/* Botón primario (rojo) */
+.btn-primary { background: var(--primary); color: white; }
+/* Hover del botón primario: elevation y sombra */
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(196,30,58,0.3); }
+/* Botón outline (transparente con borde) */
+.btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.btn-outline:hover { background: var(--primary); color: white; }
+/* Botón de ancho completo */
+.btn-full { width: 100%; }
+
+/* ========== SECCIONES ========== */
+/* Padding estándar para todas las secciones */
+.section { padding: 100px 0; }
+/* Encabezado de sección centrado */
+.section-header { text-align: center; margin-bottom: 60px; }
+/* Etiqueta decorativa (ej: "Nuestros Productos") */
+.section-tag {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 50px;
+    background: rgba(196,30,58,0.08);  /* Fondo rojo claro */
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;  /* Texto en mayúsculas */
+    margin-bottom: 16px;
+}
+/* Título principal de sección */
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);  /* Tamaño responsivo */
+    color: var(--gray-900);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+/* Descripción de sección */
+.section-desc { color: var(--gray-500); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+/* ========== FOOTER / PIE DE PÁGINA ========== */
+/* Pie de página oscuro con degradado */
+.footer {
+    background: linear-gradient(180deg, var(--dark) 0%, #0d0d1a 100%);
+    color: rgba(255,255,255,0.8);
+    padding: 80px 0 0;
+}
+/* Grid del footer: 4 columnas */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;  /* Columnas desiguales */
+    gap: 50px;
+    padding-bottom: 60px;
+}
+/* Logo del footer con borde circular */
+.footer-logo {
+    height: 70px; margin-bottom: 20px;
+    border-radius: 50%;         /* Circular */
+    border: 3px solid rgba(255,255,255,0.1); /* Borde sutil */
+    padding: 4px;
+}
+/* Texto descriptivo del footer */
+.footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    opacity: 0.7;
+    max-width: 300px;
+}
+/* Redes sociales */
+.footer-social { display: flex; gap: 12px; }
+.footer-social a {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);  /* Fondo translúcido */
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+/* Hover de redes sociales: fondo rojo */
+.footer-social a:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-3px); }
+/* Títulos de columnas del footer */
+.footer-col h4 {
+    color: white; font-size: 1.1rem; margin-bottom: 24px;
+    position: relative; padding-bottom: 12px;
+    font-family: var(--font-display);
+}
+/* Línea decorativa bajo el título */
+.footer-col h4::after {
+    content: '';  /* Elemento vacío para la línea */
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 40px; height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+/* Enlaces del footer */
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a {
+    opacity: 0.7;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;                 /* Espacio entre icono y texto */
+}
+/* Hover de enlaces: color rojo y desplazamiento */
+.footer-col ul li a:hover { opacity: 1; color: var(--primary); padding-left: 5px; }
+/* Información de contacto */
+.footer-contact li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    opacity: 0.7;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+/* Iconos de contacto */
+.footer-contact li i { color: var(--primary); margin-top: 4px; font-size: 1rem; }
+/* Barra inferior del footer */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 28px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    background: rgba(0,0,0,0.2);  /* Fondo ligeramente más oscuro */
+}
+
+/* ========== BOTÓN DE WHATSAPP ========== */
+/* Botón flotante de WhatsApp en la esquina inferior derecha */
+.whatsapp-fab {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 60px; height: 60px;
+    background: #25d366;       /* Verde de WhatsApp */
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 2rem;
+    box-shadow: 0 8px 25px rgba(37,211,102,0.4);  /* Sombra verde */
+    z-index: 999;
+    transition: var(--transition);
+    animation: pulse-green 2s infinite;  /* Animación de pulso */
+}
+.whatsapp-fab:hover { transform: scale(1.1); }
+/* Animación de pulso para WhatsApp */
+@keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+}
+
+/* ========== BOTÓN VOLVER ARRIBA ========== */
+/* Botón para volver al inicio de la página */
+.back-to-top {
+    position: fixed;
+    bottom: 30px; right: 100px;
+    width: 50px; height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    opacity: 0; visibility: hidden;  /* Oculto por defecto */
+    transition: var(--transition);
+    z-index: 998;
+    box-shadow: var(--shadow-md);
+}
+/* Visible cuando se hace scroll */
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+/* ========== ANIMACIONES DE SCROLL ========== */
+/* Clase para elementos que aparecen al hacer scroll */
+.fade-up {
+    opacity: 0;                 /* Invisible por defecto */
+    transform: translateY(40px); /* Desplazado hacia abajo */
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Estado animado: visible y en posición original */
+.fade-up.animated { opacity: 1; transform: translateY(0); }
+
+/* ========== RESPONSIVE / ADAPTACIÓN ========== */
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    /* Menú hamburguesa visible, nav horizontal oculto */
+    .nav {
+        display: none;
+        position: fixed;
+        top: 80px; left: 0; right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow-md);
+        gap: 4px;
+    }
+    .nav.active { display: flex; }  /* Menú abierto */
+    .nav-link { padding: 12px 20px; border-radius: var(--radius-sm); }
+    .nav-toggle { display: flex; }  /* Botón hamburguesa visible */
+    /* Footer: 2 columnas */
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* Móviles */
+@media (max-width: 768px) {
+    .section { padding: 70px 0; }  /* Menos padding */
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+}

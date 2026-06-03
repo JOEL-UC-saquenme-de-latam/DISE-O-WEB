@@ -1,0 +1,345 @@
+/* ============================================
+   ARCHIVO: stylesHistoria.css
+   DESCRIPCIÓN: Estilos de la página de historia/timeline
+   CONTIENEN: Banner, línea de tiempo, logros
+   ============================================ */
+
+/* ========== BANNER DE PÁGINA ========== */
+.page-banner {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo del banner */
+.page-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Superposición oscura del banner */
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Contenido del banner */
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Subtítulo de la página */
+.page-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+}
+
+/* Migas de pan (breadcrumb) */
+.breadcrumb {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* Enlace del breadcrumb */
+.breadcrumb a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Enlace activo del breadcrumb */
+.breadcrumb a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Icono del breadcrumb */
+.breadcrumb span {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Etiqueta de sección */
+.section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(37,211,102,0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Título de sección */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* ========== LÍNEA DE TIEMPO ========== */
+.section-timeline {
+    padding: 100px 0;
+}
+
+/* Contenedor de la línea de tiempo */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Línea vertical central */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: var(--primary);
+    opacity: 0.3;
+}
+
+/* Cada evento de la línea de tiempo */
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+}
+
+/* Eventos pares (izquierda) */
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+/* Punto de la línea de tiempo */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(50% - 8px);
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px var(--primary);
+    z-index: 1;
+}
+
+/* Contenido del evento */
+.timeline-content {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-right: 40px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en el contenido */
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Flecha del contenido (eventos impares) */
+.timeline-item:not(.timeline-item:nth-child(even)) .timeline-content::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 24px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid white;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+/* Flecha del contenido (eventos pares) */
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 0;
+    margin-left: 40px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 24px;
+    width: 0;
+    height: 0;
+    border-right: 8px solid white;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+/* Año del evento */
+.timeline-year {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Título del evento */
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+/* Texto del evento */
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ========== LOGROS ========== */
+.section-achievements {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+/* Grid de logros */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta de logro */
+.achievement-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en tarjetas de logro */
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Icono del logro */
+.achievement-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Título del logro */
+.achievement-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+/* Descripción del logro */
+.achievement-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .page-title { font-size: 2rem; } /* Reduce título en móvil */
+    .section-title { font-size: 1.8rem; } /* Reduce títulos de sección */
+    
+    /* Ajustes para línea de tiempo en móvil */
+    .timeline::before {
+        left: 20px; /* Línea a la izquierda */
+    }
+    
+    .timeline-item {
+        padding-right: 0;
+        padding-left: 50px;
+        justify-content: flex-start;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 50px;
+    }
+    
+    .timeline-item::before {
+        left: 12px; /* Puntos a la izquierda */
+    }
+    
+    .timeline-content {
+        margin-right: 0;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 0;
+    }
+    
+    /* Oculta flechas en móvil */
+    .timeline-content::after {
+        display: none !important;
+    }
+    
+    /* Grid de logros en 1 columna */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title { font-size: 1.8rem; } /* Reduce título en celulares */
+    .timeline-content { padding: 20px; } /* Reduce padding del contenido */
+}

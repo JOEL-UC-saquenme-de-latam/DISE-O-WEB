@@ -1,0 +1,372 @@
+/* ============================================
+   ARCHIVO: stylesNosotros.css
+   DESCRIPCIÓN: Estilos de la página "Nosotros"
+   CONTIENEN: Banner, historia, misión, valores, compromiso social
+   ============================================ */
+
+/* ========== BANNER DE PÁGINA ========== */
+.page-banner {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo del banner */
+.page-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Superposición oscura del banner */
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Contenido del banner */
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Subtítulo de la página */
+.page-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+}
+
+/* Migas de pan (breadcrumb) */
+.breadcrumb {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* Enlace del breadcrumb */
+.breadcrumb a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Enlace activo del breadcrumb */
+.breadcrumb a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Icono del breadcrumb */
+.breadcrumb span {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.main-content {
+    padding: 80px 0;
+}
+
+/* ========== HISTORIA COMPLETA ========== */
+.section-history {
+    padding: 80px 0;
+}
+
+/* Grid de historia: imagen + contenido */
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Contenedor de imagen */
+.history-image {
+    position: relative;
+}
+
+/* Imagen principal */
+.history-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Badge de fundación */
+.founding-badge {
+    position: absolute;
+    bottom: -30px;
+    left: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 24px 32px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+}
+
+/* Año de fundación */
+.founding-year {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Texto del badge */
+.founding-text {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Contenido de la historia */
+.history-content {
+    padding: 20px 0;
+}
+
+/* Párrafos de la historia */
+.history-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* ========== MISIÓN Y VISIÓN ========== */
+.section-mission {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+/* Grid de misión y visión */
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Tarjeta de misión o visión */
+.mission-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Icono de la tarjeta */
+.mission-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/* Título de la tarjeta */
+.mission-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+/* Texto de la tarjeta */
+.mission-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* ========== VALORES ========== */
+.section-values {
+    padding: 100px 0;
+}
+
+/* Header de sección */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Etiqueta de sección */
+.section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(37,211,102,0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Título de sección */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Grid de 3 columnas para valores */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta de valor */
+.value-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en tarjetas de valor */
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Icono del valor */
+.value-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Título del valor */
+.value-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+/* Descripción del valor */
+.value-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ========== COMPROMISO SOCIAL ========== */
+.section-social {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+/* Grid de compromiso social */
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Contenido del compromiso social */
+.social-content {
+    padding: 20px 0;
+}
+
+/* Párrafos del compromiso social */
+.social-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* Lista de compromisos */
+.social-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Elemento de la lista */
+.social-list li {
+    padding: 10px 0;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icono de la lista */
+.social-list li i {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+/* Imagen del compromiso social */
+.social-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title { font-size: 2rem; } /* Reduce título en móvil */
+    .history-grid { grid-template-columns: 1fr; gap: 40px; } /* 1 columna en móvil */
+    .mission-grid { grid-template-columns: 1fr; } /* 1 columna en móvil */
+    .values-grid { grid-template-columns: 1fr; } /* 1 columna en móvil */
+    .social-grid { grid-template-columns: 1fr; gap: 40px; } /* 1 columna en móvil */
+    .founding-badge { position: relative; bottom: auto; left: auto; margin-top: 20px; display: inline-block; } /* Badge relativo */
+}
+
+@media (max-width: 480px) {
+    .page-title { font-size: 1.8rem; } /* Reduce título en celulares */
+    .section-title { font-size: 1.8rem; } /* Reduce títulos de sección */
+}

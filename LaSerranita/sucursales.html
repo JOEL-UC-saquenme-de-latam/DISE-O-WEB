@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!-- ============================================
+     ARCHIVO: sucursales.html
+     DESCRIPCIÓN: Página de sucursales de La Serranita
+     CONTIENE: 5 sucursales con información y mapa
+     ============================================ -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucursales | La Serranita</title>
+    <meta name="description" content="Encuentra nuestras sucursales en Huancayo y alrededores.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="stylesSucursales.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-spinner"></div>
+            <p>La Serranita</p>
+        </div>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="La Serranita">
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="historia.html" class="nav-link">Historia</a>
+                <a href="productos.html" class="nav-link">Productos</a>
+                <a href="proceso.html" class="nav-link">Proceso</a>
+                <a href="sucursales.html" class="nav-link active">Sucursales</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== BANNER DE PÁGINA ========== -->
+    <section class="page-banner">
+        <div class="page-banner-bg" style="background-image: url('assets/hero3.jpg');"></div>
+        <div class="page-banner-overlay"></div>
+        <div class="page-banner-content">
+            <h1 class="page-title">Nuestras Sucursales</h1>
+            <p class="page-subtitle">Encuentra La Serranita cerca de ti</p>
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <a href="sucursales.html" class="active">Sucursales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <main class="main-content">
+
+        <!-- SUCURSALES -->
+        <section class="section section-branches">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Encuéntranos</span>
+                    <h2 class="section-title">Nuestras 5 sucursales</h2>
+                    <p class="section-desc">Visítanos en cualquiera de nuestras ubicaciones en Huancayo y alrededores.</p>
+                </div>
+                
+                <!-- Grid de sucursales -->
+                <div class="branches-grid">
+                    
+                    <!-- Sucursal 1: Principal -->
+                    <div class="branch-card main-branch">
+                        <div class="branch-badge">Principal</div>
+                        <div class="branch-image">
+                            <img src="assets/sucursal1.jpg" alt="Sucursal Principal La Serranita">
+                        </div>
+                        <div class="branch-info">
+                            <h3><i class="fas fa-store"></i> Sucursal Principal</h3>
+                            <p class="branch-address"><i class="fas fa-map-marker-alt"></i> Jr. Ayacucho 394, Huancayo</p>
+                            <p class="branch-hours"><i class="fas fa-clock"></i> Lun-Sáb: 7:00 - 20:00 | Dom: 10:00 - 18:00</p>
+                            <p class="branch-phone"><i class="fas fa-phone"></i> +51 964 970 065</p>
+                            <a href="https://wa.me/51964970065" class="btn btn-primary btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sucursal 2: San Carlos -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="assets/sucursal2.jpg" alt="Sucursal San Carlos La Serranita">
+                        </div>
+                        <div class="branch-info">
+                            <h3><i class="fas fa-store"></i> San Carlos</h3>
+                            <p class="branch-address"><i class="fas fa-map-marker-alt"></i> Av. San Carlos, Huancayo</p>
+                            <p class="branch-hours"><i class="fas fa-clock"></i> Lun-Sáb: 8:00 - 20:00</p>
+                            <a href="https://wa.me/51964970065" class="btn btn-outline btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sucursal 3: El Tambo -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="assets/sucursal3.jpg" alt="Sucursal El Tambo La Serranita">
+                        </div>
+                        <div class="branch-info">
+                            <h3><i class="fas fa-store"></i> El Tambo</h3>
+                            <p class="branch-address"><i class="fas fa-map-marker-alt"></i> Jr. San Martín 1074, El Tambo</p>
+                            <p class="branch-hours"><i class="fas fa-clock"></i> Lun-Sáb: 8:00 - 19:00</p>
+                            <a href="https://wa.me/51964970065" class="btn btn-outline btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sucursal 4: Chilca -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="assets/sucursal4.jpg" alt="Sucursal Chilca La Serranita">
+                        </div>
+                        <div class="branch-info">
+                            <h3><i class="fas fa-store"></i> Chilca</h3>
+                            <p class="branch-address"><i class="fas fa-map-marker-alt"></i> Av. La Molina, Chilca</p>
+                            <p class="branch-hours"><i class="fas fa-clock"></i> Lun-Sáb: 8:00 - 19:00</p>
+                            <a href="https://wa.me/51964970065" class="btn btn-outline btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sucursal 5: El Rosario -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="assets/sucursal5.jpg" alt="Sucursal El Rosario La Serranita">
+                        </div>
+                        <div class="branch-info">
+                            <h3><i class="fas fa-store"></i> El Rosario</h3>
+                            <p class="branch-address"><i class="fas fa-map-marker-alt"></i> Jr. Progreso, El Rosario</p>
+                            <p class="branch-hours"><i class="fas fa-clock"></i> Lun-Sáb: 8:00 - 19:00</p>
+                            <a href="https://wa.me/51964970065" class="btn btn-outline btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contactar
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA -->
+        <section class="section section-map">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Ubicación</span>
+                    <h2 class="section-title">Encuéntranos en Huancayo</h2>
+                </div>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Sucursal Principal</h3>
+                        <p>Jr. Ayacucho 394, Huancayo, Junín, Perú</p>
+                        <a href="https://maps.google.com/?q=Jr.+Ayacucho+394+Huancayo" target="_blank" class="btn btn-primary btn-small">
+                            <i class="fas fa-directions"></i> Cómo llegar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="assets/logo.jpg" alt="La Serranita" class="footer-logo">
+                    <p>Somos una empresa peruana dedicada a la producción y comercialización de productos lácteos y helados artesanales desde 1984 en Huancayo.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/laserranitahyo/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laserranitaperu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51964970065" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/@laserranitaperu" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="nosotros.html"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                        <li><a href="historia.html"><i class="fas fa-chevron-right"></i> Historia</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Yogurt</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Queso Fresco</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Queso Prensado</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Helados</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Leche</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span>Jr. Ayacucho 394<br>Huancayo, Junín, Perú</span></li>
+                        <li><i class="fas fa-phone"></i><span>+51 964 970 065</span></li>
+                        <li><i class="fas fa-clock"></i><span>Lun-Sáb: 7:00 - 20:00<br>Dom: 10:00 - 18:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 La Serranita - Productos Lácteos La Serranita E.I.R.L. | RUC: 20568655355</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BOTONES FLOTANTES ========== -->
+    <a href="https://wa.me/51964970065" class="whatsapp-fab" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="scriptBase.js"></script>
+</body>
+</html>

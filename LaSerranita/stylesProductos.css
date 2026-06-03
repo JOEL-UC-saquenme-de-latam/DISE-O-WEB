@@ -1,0 +1,342 @@
+/* ============================================
+   ARCHIVO: stylesProductos.css
+   DESCRIPCIÓN: Estilos de la página de productos
+   CONTIENEN: Banner, filtros, grid de productos, calidad
+   ============================================ */
+
+/* ========== BANNER DE PÁGINA ========== */
+.page-banner {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo del banner */
+.page-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Superposición oscura del banner */
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Contenido del banner */
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Subtítulo de la página */
+.page-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+}
+
+/* Migas de pan (breadcrumb) */
+.breadcrumb {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* Enlace del breadcrumb */
+.breadcrumb a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Enlace activo del breadcrumb */
+.breadcrumb a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Icono del breadcrumb */
+.breadcrumb span {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.main-content {
+    padding: 80px 0;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Etiqueta de sección */
+.section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(37,211,102,0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Título de sección */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Descripción de sección */
+.section-desc {
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ========== FILTROS / BOTONES DE CATEGORÍA ========== */
+.product-filters {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+/* Botón de filtro */
+.filter-btn {
+    padding: 12px 28px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Efecto hover en botón de filtro */
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Botón de filtro activo */
+.filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* ========== GRID DE PRODUCTOS ========== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Efecto hover en tarjeta de producto */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Contenedor de imagen del producto */
+.product-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+/* Imagen del producto */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto hover en imagen */
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* Etiqueta del producto (Popular, Nuevo, etc.) */
+.product-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--primary);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Información del producto */
+.product-info {
+    padding: 24px;
+}
+
+/* Nombre del producto */
+.product-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+/* Descripción del producto */
+.product-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* Categoría del producto */
+.product-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(37,211,102,0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* ========== SECCIÓN DE CALIDAD ========== */
+.section-quality {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+/* Grid de calidad */
+.quality-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Contenido de calidad */
+.quality-content {
+    padding: 20px 0;
+}
+
+/* Párrafos de calidad */
+.quality-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* Lista de características */
+.quality-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Elemento de la lista */
+.quality-list li {
+    padding: 10px 0;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icono de la lista */
+.quality-list li i {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* Imagen de calidad */
+.quality-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* ========== ANIMACIÓN ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title { font-size: 2rem; } /* Reduce título en móvil */
+    .section-title { font-size: 1.8rem; } /* Reduce títulos de sección */
+    .quality-grid { grid-template-columns: 1fr; gap: 40px; } /* 1 columna en móvil */
+    .product-filters { gap: 10px; } /* Reduce espacio entre filtros */
+    .filter-btn { padding: 10px 20px; font-size: 0.9rem; } /* Reduce tamaño filtros */
+}
+
+@media (max-width: 480px) {
+    .page-title { font-size: 1.8rem; } /* Reduce título en celulares */
+    .products-grid { grid-template-columns: 1fr; } /* 1 columna en celulares */
+}

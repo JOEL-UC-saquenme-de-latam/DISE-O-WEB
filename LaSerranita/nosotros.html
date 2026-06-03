@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- ============================================
+     ARCHIVO: nosotros.html
+     DESCRIPCIÓN: Página "Nosotros" de La Serranita
+     CONTIENE: Historia completa, misión, visión, valores, compromiso social
+     ============================================ -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | La Serranita</title>
+    <meta name="description" content="Conoce la historia de La Serranita, empresa láctea peruana desde 1984.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="stylesNosotros.css">
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-spinner"></div>
+            <p>La Serranita</p>
+        </div>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="La Serranita">
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link active">Nosotros</a>
+                <a href="historia.html" class="nav-link">Historia</a>
+                <a href="productos.html" class="nav-link">Productos</a>
+                <a href="proceso.html" class="nav-link">Proceso</a>
+                <a href="sucursales.html" class="nav-link">Sucursales</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== BANNER DE PÁGINA ========== -->
+    <section class="page-banner">
+        <div class="page-banner-bg" style="background-image: url('assets/hero2.jpg');"></div>
+        <div class="page-banner-overlay"></div>
+        <div class="page-banner-content">
+            <h1 class="page-title">Nuestra Historia</h1>
+            <p class="page-subtitle">Más de 40 años de tradición láctea en el Valle del Mantaro</p>
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <a href="nosotros.html" class="active">Nosotros</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <main class="main-content">
+
+        <!-- HISTORIA COMPLETA -->
+        <section class="section section-history">
+            <div class="container">
+                <div class="history-grid">
+                    <!-- Imagen de la historia -->
+                    <div class="history-image">
+                        <img src="assets/about.jpg" alt="Historia de La Serranita">
+                        <!-- Badge de fundación -->
+                        <div class="founding-badge">
+                            <span class="founding-year">1984</span>
+                            <span class="founding-text">Fundación</span>
+                        </div>
+                    </div>
+                    <!-- Contenido de la historia -->
+                    <div class="history-content">
+                        <span class="section-tag">Nuestra Historia</span>
+                        <h2 class="section-title">Una tradición que nace del corazón del Valle</h2>
+                        <p>La Serranita fue fundada en 1984 por <strong>Miguel Mitterhofer Yáñez</strong>, un emprendedor con una profunda pasión por la agricultura y la ganadería. Inspirado en las tradiciones lecheras de su familia en el Valle del Mantaro, tomó la decisión de dedicarse a la producción de lácteos de alta calidad.</p>
+                        <p>La empresa se estableció oficialmente con el nombre <strong>"Productos Lácteos La Serranita E.I.R.L."</strong>, ubicada en la Calle San Martín N° 1074, en la ciudad de Huancayo. Desde sus humildes comienzos, el objetivo siempre fue claro: ofrecer productos lácteos naturales y de excelente sabor.</p>
+                        <p>Con los años, La Serranita se ha expandido significativamente, incorporando nuevas líneas de productos incluyendo yogures, helados y derivados lácteos, manteniendo siempre los valores de calidad y tradición que la caracterizan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISIÓN Y VISIÓN -->
+        <section class="section section-mission">
+            <div class="container">
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Misión</h3>
+                        <p>"Somos una organización que produce y comercializa lácteos regionales de alta calidad, elaborados con materia prima natural, para ofrecer a nuestros consumidores productos saludables, nutritivos y a un precio justo, respaldados por el esfuerzo de nuestro equipo humano y el compromiso con el mejoramiento continuo."</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Visión</h3>
+                        <p>"Ser una empresa láctea con reconocimiento y posicionamiento a nivel nacional al año 2030, destacando por la excelencia en la calidad de nuestros productos, la innovación constante y el sabor auténtico que nos identifica, contribuyendo al desarrollo sostenible de nuestra región."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALORES -->
+        <section class="section section-values">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nuestros Valores</span>
+                    <h2 class="section-title">Los principios que nos guían</h2>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h4>Calidad</h4>
+                        <p>Nos comprometemos a ofrecer productos de la más alta calidad, utilizando ingredientes naturales y procesos que garantizan la excelencia.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Compromiso</h4>
+                        <p>Estamos dedicados a satisfacer las necesidades de nuestros clientes y consumidores con productos nutritivos y deliciosos.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4>Sostenibilidad</h4>
+                        <p>Trabajamos de manera responsable con el medio ambiente, apoyando a los productores locales y promoviendo prácticas sostenibles.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovación</h4>
+                        <p>Buscamos constantemente nuevas formas de mejorar nuestros procesos y productos para ofrecer la mejor experiencia a nuestros clientes.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Pasión</h4>
+                        <p>Amamos lo que hacemos y eso se refleja en cada producto que elaboramos, con dedicación y cariño como en familia.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Integridad</h4>
+                        <p>Actuamos con honestidad y transparencia en cada aspecto de nuestro negocio, generando confianza en nuestros stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPROMISO SOCIAL -->
+        <section class="section section-social">
+            <div class="container">
+                <div class="social-grid">
+                    <div class="social-content">
+                        <span class="section-tag">Compromiso Social</span>
+                        <h2 class="section-title">Contribuyendo al desarrollo de nuestra región</h2>
+                        <p>En La Serranita creemos que el crecimiento empresarial debe ir de la mano con el bienestar de la comunidad. Por eso, desde nuestros inicios, hemos implementado diversas iniciativas sociales que buscan mejorar la calidad de vida de las familias en el Valle del Mantaro.</p>
+                        <ul class="social-list">
+                            <li><i class="fas fa-check"></i> Apoyo a productores locales de leche</li>
+                            <li><i class="fas fa-check"></i> Programas de capacitación ganadera</li>
+                            <li><i class="fas fa-check"></i> Generación de empleo digno en la región</li>
+                            <li><i class="fas fa-check"></i> Participación en eventos comunitarios</li>
+                            <li><i class="fas fa-check"></i> Inversión en infraestructura local</li>
+                        </ul>
+                    </div>
+                    <div class="social-image">
+                        <img src="assets/gallery1.jpg" alt="Compromiso Social La Serranita">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="assets/logo.jpg" alt="La Serranita" class="footer-logo">
+                    <p>Somos una empresa peruana dedicada a la producción y comercialización de productos lácteos y helados artesanales desde 1984 en Huancayo.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/laserranitahyo/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laserranitaperu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51964970065" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/@laserranitaperu" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="nosotros.html"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                        <li><a href="historia.html"><i class="fas fa-chevron-right"></i> Historia</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Yogurt</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Queso Fresco</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Queso Prensado</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Helados</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Leche</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span>Jr. Ayacucho 394<br>Huancayo, Junín, Perú</span></li>
+                        <li><i class="fas fa-phone"></i><span>+51 964 970 065</span></li>
+                        <li><i class="fas fa-clock"></i><span>Lun-Sáb: 7:00 - 20:00<br>Dom: 10:00 - 18:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 La Serranita - Productos Lácteos La Serranita E.I.R.L. | RUC: 20568655355</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BOTONES FLOTANTES ========== -->
+    <a href="https://wa.me/51964970065" class="whatsapp-fab" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="scriptBase.js"></script>
+    <script src="scriptNosotros.js"></script>
+</body>
+</html>

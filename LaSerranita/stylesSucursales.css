@@ -1,0 +1,326 @@
+/* ============================================
+   ARCHIVO: stylesSucursales.css
+   DESCRIPCIÓN: Estilos de la página de sucursales
+   CONTIENEN: Banner, grid de sucursales, mapa
+   ============================================ */
+
+/* ========== BANNER DE PÁGINA ========== */
+.page-banner {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo del banner */
+.page-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Superposición oscura del banner */
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Contenido del banner */
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Subtítulo de la página */
+.page-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+}
+
+/* Migas de pan (breadcrumb) */
+.breadcrumb {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* Enlace del breadcrumb */
+.breadcrumb a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Enlace activo del breadcrumb */
+.breadcrumb a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Icono del breadcrumb */
+.breadcrumb span {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+.main-content {
+    padding: 80px 0;
+}
+
+/* ========== HEADER DE SECCIÓN ========== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Etiqueta de sección */
+.section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(37,211,102,0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Título de sección */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+/* Descripción de sección */
+.section-desc {
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ========== GRID DE SUCURSALES ========== */
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta de sucursal */
+.branch-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en tarjeta de sucursal */
+.branch-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Tarjeta de sucursal principal */
+.branch-card.main-branch {
+    grid-column: span 2; /* Ocupa dos columnas */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Badge de principal */
+.branch-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--primary);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+/* Imagen de la sucursal */
+.branch-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+/* Imagen principal (2 columnas) */
+.branch-card.main-branch .branch-image {
+    height: 100%;
+}
+
+/* Imagen de la sucursal */
+.branch-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto hover en imagen */
+.branch-card:hover .branch-image img {
+    transform: scale(1.05);
+}
+
+/* Información de la sucursal */
+.branch-info {
+    padding: 24px;
+}
+
+/* Título de la sucursal */
+.branch-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icono del título */
+.branch-info h3 i {
+    color: var(--primary);
+}
+
+/* Dirección */
+.branch-address {
+    color: var(--text-light);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icono de dirección */
+.branch-address i {
+    color: var(--primary);
+    width: 16px;
+}
+
+/* Horario */
+.branch-hours {
+    color: var(--text-light);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icono de horario */
+.branch-hours i {
+    color: var(--primary);
+    width: 16px;
+}
+
+/* Teléfono */
+.branch-phone {
+    color: var(--text-light);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icono de teléfono */
+.branch-phone i {
+    color: var(--primary);
+    width: 16px;
+}
+
+/* Botón pequeño */
+.btn-small {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* ========== MAPA ========== */
+.section-map {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+/* Contenedor del mapa */
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Placeholder del mapa (simula un mapa) */
+.map-placeholder {
+    background: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* Icono del mapa */
+.map-placeholder i {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+
+/* Título del mapa */
+.map-placeholder h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+/* Dirección del mapa */
+.map-placeholder p {
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .branches-grid {
+        grid-template-columns: 1fr; /* 1 columna en tablets */
+    }
+    
+    .branch-card.main-branch {
+        grid-column: span 1; /* Ocupa 1 columna */
+        display: block; /* Cambia a bloque */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title { font-size: 2rem; } /* Reduce título en móvil */
+    .section-title { font-size: 1.8rem; } /* Reduce títulos de sección */
+}
+
+@media (max-width: 480px) {
+    .page-title { font-size: 1.8rem; } /* Reduce título en celulares */
+    .branch-info { padding: 20px; } /* Reduce padding */
+}
